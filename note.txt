@@ -11,4 +11,7 @@ rm <filename> , rm -r <FolderName> = delete
 git init ให้ใช้git
 git remote add <link you repo> เพื่อให้ folderนั้นlinkกับrepository
 git status เพื่อ check สถานะ
+git commit -m "description"
 git add <path/to/file> เพิ่มfile
+git checkout <branch-name> = switch to branch 
+
