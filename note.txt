@@ -16,5 +16,6 @@ git add <file> เพิ่มfile
 git commit -m "description"
 git push origin <branchname>
 git checkout <branch-name> = switch branch
-git merge 
+git log เพื่อดู version
+git revert = ย้อนกลับ
 

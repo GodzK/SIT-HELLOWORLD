@@ -1,1 +1,21 @@
-Hello World Hippo Backend
+-- Using Git Bash --
+ls -a = ดูไฟล์ที่ซ่อนอยู่
+กด tab จะขึ้นชื่อที่เป็นไปได้
+pwd = ดู ที่ที่เราอยู่
+touch = สร้างไฟล์ ctrl + x (save file and yes)
+cat <filename> = ดูเนื้อหาไฟล์
+rm <filename> , rm -r <FolderName> = delete
+
+
+-- Git Command --
+git init ให้ใช้git
+git remote add <link you repo> เพื่อให้ folderนั้นlinkกับrepository
+git status เพื่อ check สถานะ
+git branch = check branch ของเรา
+git add <file> เพิ่มfile
+git commit -m "description"
+git push origin <branchname>
+git checkout <branch-name> = switch branch
+git log เพื่อดู version
+git revert = ย้อนกลับ
+
