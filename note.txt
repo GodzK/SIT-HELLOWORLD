@@ -1,0 +1,10 @@
+-- Using Git Bash --
+ls -a = ดูไฟล์ที่ซ่อนอยู่
+กด tab จะขึ้นชื่อที่เป็นไปได้
+pwd = ดู ที่ที่เราอยู่
+touch = สร้างไฟล์ ctrl + x (save file and yes)
+cat <filename> = ดูเนื้อหาไฟล์
+rm <filename> , rm -r <FolderName> = delete
+
+
+-- Git Command --
