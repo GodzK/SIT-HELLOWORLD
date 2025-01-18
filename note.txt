@@ -8,3 +8,7 @@ rm <filename> , rm -r <FolderName> = delete
 
 
 -- Git Command --
+git init ให้ใช้git
+git remote add <link you repo> เพื่อให้ folderนั้นlinkกับrepository
+git status เพื่อ check สถานะ
+git add <path/to/file> เพิ่มfile
