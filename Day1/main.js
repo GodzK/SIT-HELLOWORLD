@@ -33,11 +33,7 @@ console.log(arrowPlus(20,25))
 
 
 //async await
-
 //ไม่ได้สอน week1
-
-
-//import export
 
 
 
