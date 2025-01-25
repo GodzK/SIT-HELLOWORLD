@@ -1,26 +1,3 @@
--- Using Git Bash --
-ls -a = ดูไฟล์ที่ซ่อนอยู่
-กด tab จะขึ้นชื่อที่เป็นไปได้
-pwd = ดู ที่ที่เราอยู่
-touch = สร้างไฟล์ ctrl + x (save file and yes)
-cat <filename> = ดูเนื้อหาไฟล์
-rm <filename> , rm -r <FolderName> = delete
-
-
--- Git Command --
-git init ให้ใช้git
-git remote add <link you repo> เพื่อให้ folderนั้นlinkกับrepository
-git status เพื่อ check สถานะ
-git branch = check branch ของเรา
-git add <file> เพิ่มfile
-git commit -m "description"
-git push origin <branchname>
-git checkout <branch-name> = switch branch
-git log เพื่อดู version
-git revert = ย้อนกลับ
-
-
-
 //Rest Api = api ที่ออกเเบบตามหลักของ rest 6 ข้อ คือ 1. Stateless 2. http เป็นตัวกลาง 3. json
 //Http Method = CRUD คือ 1. Create 2. Read 3. Update 4. Delete ซึ่งใน http จะมี method ที่ใช้ในการทำ CRUD คือ 1. POST 2. GET 3. PUT 4. DELETE ตามลำดับ
 
@@ -44,4 +21,42 @@ git revert = ย้อนกลับ
 //Step 1. npm init -y จะได้ไฟล์ package.json มันจะเก็บconfigของโปรเจคเรา
 //Step 2. npm install express body-parser mysql2 dotenv nodemon ติดตั้ง express เพื่อใช้ในการสร้าง server และ body-parser เพื่อใช้ในการ เปลี่ยนbodyให้เป็นjson mysql2 เพื่อใช้ในการเชื่อมต่อกับฐานข้อมูล  dotenv เพื่อใช้ในการเก็บค่า config ของโปรเจคเรา nodemon เพื่อใช้ในการรันโปรเจคเรา
 
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+const mysql = require('mysql2/promise')
+const port = 8000
+require('dotenv').config()
+app.use(bodyParser.json())
+app.get('/myname', (request, response) => {
+    response.json({
+        name: "Phakaphol",
+        age: 21
+    })
+})
 
+
+mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    port: process.env.DB_PORT
+}).then(connection => {
+    app.get('/members', async (req, res) => {
+        try {
+            const [rows] = await connection.query('SELECT * FROM members');
+            res.json(rows)
+            console.log(rows);  
+        } catch (error) {
+            console.log(error);
+        }
+
+    })
+})
+
+app.listen(port, () => {
+    console.log(`Server run on port 6789`);
+})
+
+ 
